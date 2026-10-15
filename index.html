@@ -1,15 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffe0eb">
-  <meta name="description" content="Uma declaração de amor de Lê para Danny, mesmo com a distância entre os dois.">
-  <title>Nosso Amor ❤️ | Lê & Danny</title>
+
+  <title>De Lê para Danny ❤️</title>
+
+  <meta
+    name="description"
+    content="Uma pequena demonstração de um amor que continua crescendo, mesmo com a distância."
+  >
 
   <style>
+    :root {
+      --rosa: #e75480;
+      --rosa-claro: #fff0f5;
+      --rosa-medio: #ffd6e4;
+      --vinho: #8f3152;
+      --texto: #613546;
+      --branco: #ffffff;
+    }
+
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
@@ -18,89 +32,254 @@
     }
 
     body {
-      margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      color: #71374d;
-      text-align: center;
-      background: linear-gradient(135deg, #fff0f5, #ffe0eb, #fff7fa);
+      color: var(--texto);
+      background:
+        radial-gradient(circle at top left, #ffe0eb, transparent 38%),
+        linear-gradient(180deg, #fff7fa, #ffeaf2 55%, #fff7fa);
+      min-height: 100vh;
       overflow-x: hidden;
     }
 
-    header {
-      padding: 55px 20px 40px;
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .hero {
+      min-height: 82vh;
+      padding: 70px 20px 55px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "♥";
+      position: absolute;
+      color: rgba(231, 84, 128, 0.12);
+      pointer-events: none;
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    .hero::before {
+      font-size: 150px;
+      top: 50px;
+      left: -20px;
+    }
+
+    .hero::after {
+      font-size: 190px;
+      right: -35px;
+      bottom: 10px;
+      animation-delay: 1.5s;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 850px;
+      animation: appear 1.3s ease both;
+    }
+
+    .small-heart {
+      color: var(--rosa);
+      font-size: 30px;
+      margin-bottom: 18px;
+      animation: pulse 2s ease-in-out infinite;
     }
 
     h1 {
-      color: #c04472;
-      font-size: clamp(2.2rem, 7vw, 3.8rem);
-      margin: 12px 0;
+      color: var(--vinho);
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      font-weight: normal;
     }
 
-    h2 {
-      color: #c04472;
-      margin-top: 0;
-      font-size: clamp(1.4rem, 4vw, 2rem);
-    }
-
-    p {
-      line-height: 1.8;
-    }
-
-    .subtitle {
-      font-size: 1.1rem;
+    .hero p {
+      font-size: clamp(1.05rem, 3vw, 1.35rem);
       line-height: 1.9;
+      max-width: 680px;
+      margin: 0 auto;
     }
 
-    .roses {
-      font-size: 1.8rem;
-      letter-spacing: 7px;
-      margin: 15px 0;
+    .hero .highlight {
+      color: var(--rosa);
+      font-style: italic;
     }
 
-    .heart {
-      display: inline-block;
-      color: #e75480;
-      font-size: 2.3rem;
-      animation: heartbeat 1.5s infinite;
+    .scroll-note {
+      margin-top: 38px;
+      color: #a85a75;
+      font-size: 0.95rem;
+      animation: pulse 3s ease-in-out infinite;
     }
 
-    section {
-      width: min(900px, 92%);
-      margin: 25px auto;
-      padding: 30px 24px;
+    .section {
+      width: min(100% - 32px, 900px);
+      margin: 0 auto;
+      padding: 35px 0 55px;
+    }
+
+    .section-title {
+      color: var(--vinho);
+      text-align: center;
+      font-weight: normal;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      margin-bottom: 25px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      line-height: 1.8;
+      margin: -10px auto 28px;
+      max-width: 650px;
+      color: #8a5064;
+    }
+
+    /* FOTO DO CASAL */
+
+    .photo-card {
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 12px;
       background: rgba(255, 255, 255, 0.88);
-      border: 1px solid #f7c4d6;
+      border: 1px solid #f6cada;
       border-radius: 24px;
-      box-shadow: 0 8px 25px rgba(192, 68, 114, 0.10);
-      animation: appear 0.8s ease both;
+      box-shadow: 0 12px 35px rgba(170, 67, 105, 0.13);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(170, 67, 105, 0.2);
     }
 
     .couple-photo {
       display: block;
       width: 100%;
-      max-width: 520px;
-      max-height: 680px;
+      height: auto;
+      max-height: 650px;
       object-fit: contain;
-      margin: 22px auto;
-      border-radius: 20px;
-      border: 5px solid #ffe0eb;
-      box-shadow: 0 8px 25px rgba(192, 68, 114, 0.16);
+      border-radius: 16px;
+      background: var(--rosa-claro);
     }
 
-    /* CARTA ROMÂNTICA COM CORAÇÕES FLUTUANTES */
+    .photo-caption {
+      text-align: center;
+      padding: 17px 10px 9px;
+      color: var(--vinho);
+      font-size: 1.15rem;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* BOTÃO DO VÍDEO */
+
+    .map-card {
+      text-align: center;
+      padding: 35px 24px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid #f7c9da;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(170, 67, 105, 0.09);
+    }
+
+    .map-icon {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .map-card p {
+      line-height: 1.9;
+      max-width: 620px;
+      margin: 0 auto 24px;
+    }
+
+    .romantic-button {
+      display: inline-block;
+      border: none;
+      border-radius: 999px;
+      padding: 15px 27px;
+      background: linear-gradient(135deg, #e75480, #c83c70);
+      color: white;
+      font-family: inherit;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 7px 18px rgba(200, 60, 112, 0.25);
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .romantic-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 11px 24px rgba(200, 60, 112, 0.35);
+    }
+
+    .romantic-button:focus-visible {
+      outline: 3px solid #8f3152;
+      outline-offset: 4px;
+    }
+
+    /* MÚSICA */
+
+    .music-card {
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 24px;
+      text-align: center;
+      border: 1px solid #f7c9da;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 10px 30px rgba(170, 67, 105, 0.09);
+    }
+
+    .music-card p {
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .music-card iframe {
+      display: block;
+      width: 100%;
+      height: 152px;
+      border: 0;
+      border-radius: 14px;
+    }
+
+    /* CARTA E CORAÇÕES */
 
     .letter-section {
       position: relative;
-      overflow: hidden;
       isolation: isolate;
+      overflow: hidden;
+      width: min(100% - 32px, 900px);
+      margin: 0 auto 55px;
+      padding: clamp(24px, 5vw, 55px);
+      border: 1px solid #f3c2d3;
+      border-radius: 28px;
+      background: rgba(255, 250, 252, 0.94);
+      box-shadow: 0 15px 45px rgba(170, 67, 105, 0.12);
     }
+
+    /*
+      CORREÇÃO DOS CORAÇÕES:
+      A camada fica acima do fundo da carta,
+      mas abaixo do conteúdo escrito.
+    */
 
     .floating-hearts {
       position: absolute;
       inset: 0;
       overflow: hidden;
       pointer-events: none;
-      z-index: -1;
+      z-index: 0;
     }
 
     .floating-hearts span {
@@ -109,50 +288,124 @@
       color: #e75480;
       opacity: 0;
       font-size: 23px;
-      animation: float-heart 10s linear infinite;
+      line-height: 1;
       text-shadow: 0 2px 8px rgba(231, 84, 128, 0.18);
+      animation: float-heart 12s linear infinite;
+      user-select: none;
     }
 
     .floating-hearts span:nth-child(1) {
       left: 7%;
       animation-delay: 0s;
+      font-size: 22px;
     }
 
     .floating-hearts span:nth-child(2) {
-      left: 24%;
-      font-size: 17px;
-      animation-delay: 2s;
+      left: 20%;
+      animation-delay: 3s;
+      font-size: 18px;
     }
 
     .floating-hearts span:nth-child(3) {
-      left: 44%;
-      font-size: 25px;
-      animation-delay: 4s;
+      left: 36%;
+      animation-delay: 6s;
+      font-size: 27px;
     }
 
     .floating-hearts span:nth-child(4) {
-      left: 67%;
-      font-size: 19px;
-      animation-delay: 1s;
+      left: 51%;
+      animation-delay: 1.5s;
+      font-size: 20px;
     }
 
     .floating-hearts span:nth-child(5) {
-      left: 87%;
-      font-size: 22px;
-      animation-delay: 3s;
+      left: 68%;
+      animation-delay: 4.5s;
+      font-size: 25px;
     }
 
     .floating-hearts span:nth-child(6) {
-      left: 56%;
-      font-size: 16px;
-      animation-delay: 6s;
+      left: 82%;
+      animation-delay: 7.5s;
+      font-size: 19px;
     }
 
     .floating-hearts span:nth-child(7) {
-      left: 35%;
-      font-size: 20px;
-      animation-delay: 7s;
+      left: 93%;
+      animation-delay: 2s;
+      font-size: 24px;
     }
+
+    /* Todo o conteúdo fica na frente dos corações. */
+
+    .letter-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .letter-title {
+      color: var(--vinho);
+      text-align: center;
+      font-size: clamp(1.9rem, 5vw, 2.8rem);
+      font-weight: normal;
+      margin-bottom: 32px;
+    }
+
+    .letter-greeting {
+      font-size: 1.3rem;
+      color: var(--rosa);
+      margin-bottom: 20px;
+    }
+
+    .letter-text {
+      font-size: clamp(1rem, 2.5vw, 1.12rem);
+      line-height: 2;
+      text-align: left;
+      overflow-wrap: break-word;
+    }
+
+    .letter-text p {
+      margin-bottom: 21px;
+    }
+
+    .letter-signature {
+      text-align: right;
+      color: var(--vinho);
+      font-size: 1.13rem;
+      line-height: 1.9;
+      margin-top: 30px;
+      font-style: italic;
+    }
+
+    .final-message {
+      margin-top: 38px;
+      padding: 23px 15px;
+      border-top: 1px solid #f1c3d3;
+      text-align: center;
+      color: var(--vinho);
+      font-size: clamp(1.15rem, 3vw, 1.5rem);
+      line-height: 1.9;
+      font-style: italic;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+      text-align: center;
+      padding: 15px 20px 40px;
+      color: #a15b76;
+      line-height: 1.9;
+      font-size: 0.95rem;
+    }
+
+    footer .footer-heart {
+      color: var(--rosa);
+      font-size: 23px;
+      display: inline-block;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    /* ANIMAÇÕES */
 
     @keyframes float-heart {
       0% {
@@ -165,197 +418,99 @@
       }
 
       75% {
-        opacity: 0.38;
+        opacity: 0.35;
       }
 
       100% {
-        transform: translateY(-750px) rotate(25deg) scale(1.15);
+        transform: translateY(-850px) rotate(25deg) scale(1.15);
         opacity: 0;
       }
     }
 
-    .letter {
-      position: relative;
-      font-size: 1.08rem;
-      line-height: 2;
-      text-align: left;
-      overflow-wrap: anywhere;
-    }
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
 
-    .letter p {
-      margin: 0 0 22px;
-    }
-
-    .letter-opening {
-      color: #b93469;
-      text-align: center;
-      font-size: 1.1rem;
-      margin-bottom: 25px !important;
-    }
-
-    .signature {
-      position: relative;
-      color: #b93469;
-      text-align: center;
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-top: 30px;
-      line-height: 1.9;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 24px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 30px;
-      background: #d94f83;
-      color: white;
-      text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-size: 0.95rem;
-      transition: transform 0.25s, background 0.25s;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      background: #b93469;
-    }
-
-    .btn.light {
-      background: #f8d1df;
-      color: #843550;
-    }
-
-    /* ILUSTRAÇÃO DA DISTÂNCIA */
-
-    .map {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      max-width: 650px;
-      margin: 28px auto;
-      padding: 24px 12px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #fff0f5, #fce0eb);
-    }
-
-    .place {
-      min-width: 85px;
-      font-size: 0.95rem;
-    }
-
-    .place span {
-      display: block;
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
-
-    .route {
-      flex: 1;
-      border-top: 3px dashed #d94f83;
-      position: relative;
-    }
-
-    .route::after {
-      content: "♥";
-      position: absolute;
-      color: #d94f83;
-      background: #fff0f5;
-      padding: 0 8px;
-      left: 50%;
-      top: -18px;
-      transform: translateX(-50%);
-      font-size: 1.5rem;
-      animation: heartbeat 1.5s infinite;
-    }
-
-    /* MÚSICA */
-
-    .music-frame {
-      display: block;
-      width: 100%;
-      max-width: 560px;
-      aspect-ratio: 16 / 9;
-      border: 0;
-      border-radius: 16px;
-      margin: 20px auto 0;
-    }
-
-    .music-note {
-      font-size: 2.2rem;
-      margin: 10px;
-    }
-
-    footer {
-      padding: 35px 20px 45px;
-      line-height: 1.9;
-      color: #a13f65;
-    }
-
-    .final-message {
-      font-size: clamp(1.15rem, 4vw, 1.5rem);
-      color: #b93469;
-      font-style: italic;
-      max-width: 750px;
-      margin: 20px auto;
-    }
-
-    @keyframes heartbeat {
-      0%, 100% { scale: 1; }
-      15% { scale: 1.15; }
-      30% { scale: 1; }
-      45% { scale: 1.12; }
-      60% { scale: 1; }
+      50% {
+        transform: scale(1.06);
+      }
     }
 
     @keyframes appear {
       from {
         opacity: 0;
-        translate: 0 12px;
+        transform: translateY(18px);
       }
 
       to {
         opacity: 1;
-        translate: 0 0;
+        transform: translateY(0);
       }
     }
 
-    @media (max-width: 480px) {
-      header {
-        padding-top: 40px;
+    /* AJUSTES PARA CELULAR */
+
+    @media (max-width: 600px) {
+      .hero {
+        min-height: 72vh;
+        padding: 55px 18px 40px;
       }
 
-      section {
-        padding: 25px 17px;
+      .hero::before {
+        font-size: 100px;
       }
 
-      .letter {
-        font-size: 1rem;
-        line-height: 1.9;
+      .hero::after {
+        font-size: 120px;
       }
 
-      .map {
-        gap: 5px;
-        padding: 20px 5px;
+      .section {
+        width: min(100% - 24px, 900px);
+        padding: 25px 0 40px;
       }
 
-      .place {
-        min-width: 70px;
-        font-size: 0.82rem;
+      .photo-card {
+        padding: 8px;
+        border-radius: 18px;
       }
 
-      .btn {
-        width: 100%;
-        max-width: 320px;
-        line-height: 1.5;
+      .couple-photo {
+        border-radius: 12px;
+      }
+
+      .map-card,
+      .music-card {
+        padding: 24px 17px;
+        border-radius: 20px;
+      }
+
+      .romantic-button {
+        padding: 14px 20px;
+        max-width: 100%;
+      }
+
+      .letter-section {
+        width: calc(100% - 24px);
+        padding: 25px 19px;
+        border-radius: 21px;
+        margin-bottom: 40px;
+      }
+
+      .letter-text {
+        line-height: 1.85;
+      }
+
+      .letter-text p {
+        margin-bottom: 18px;
+      }
+
+      .letter-signature {
+        font-size: 1.02rem;
+      }
+
+      .floating-hearts span {
+        font-size: 18px;
       }
     }
 
@@ -363,9 +518,10 @@
       *,
       *::before,
       *::after {
-        animation: none !important;
         scroll-behavior: auto !important;
-        transition: none !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
@@ -373,84 +529,112 @@
 
 <body>
 
-  <header>
-    <div class="roses">🌹 💗 🌹</div>
+  <!-- ABERTURA -->
 
-    <h1>Nosso Amor ❤️</h1>
+  <header class="hero">
+    <div class="hero-content">
+      <div class="small-heart" aria-hidden="true">♥</div>
 
-    <p class="subtitle">
-      Para Danny, meu amor.<br>
-      Mesmo longe, meu coração escolhe você todos os dias.
-    </p>
+      <h1>De Lê para Danny</h1>
 
-    <div class="heart">♥</div>
+      <p>
+        Para a pessoa que, mesmo estando longe dos meus braços,
+        continua tão perto do meu coração.
+        <br>
+        <span class="highlight">
+          Porque alguns sentimentos são maiores do que qualquer distância. ❤️
+        </span>
+      </p>
 
-    <p>De Lê para Danny, minha PRETA! ❤️</p>
+      <div class="scroll-note">
+        Feito com amor, especialmente para você, minha PRETA. ♡
+      </div>
+    </div>
   </header>
 
   <main>
 
-    <section>
-      <h2>Uma foto, mil lembranças 📸</h2>
+    <!-- FOTO DO CASAL: APENAS UMA FOTO -->
 
-      <p>
-        Entre tantas coisas bonitas da vida,<br>
-        uma das minhas favoritas é ter você na minha história.
+    <section class="section">
+      <h2 class="section-title">Um pedacinho de nós ❤️</h2>
+
+      <p class="section-subtitle">
+        Entre tantos lugares no mundo, existe um lugar especial
+        que guardo comigo: aquele em que imagino nós dois juntos.
       </p>
 
-      <img
-        class="couple-photo"
-        src="foto-do-casal.jpeg"
-        alt="Foto especial de Lê e Danny"
-      >
+      <div class="photo-card">
+        <img
+          class="couple-photo"
+          src="foto-do-casal.jpeg"
+          alt="Uma lembrança especial de Lê e Danny"
+        >
 
-      <p>
-        Que essa seja apenas uma das muitas lembranças lindas
-        que ainda vamos construir juntos. 💕
-      </p>
+        <p class="photo-caption">
+          A distância pode separar lugares, mas não precisa separar corações. 💗
+        </p>
+      </div>
     </section>
 
-    <section>
-      <h2>Dois lugares, um só coração 💌</h2>
+    <!-- VÍDEO SOBRE O AMOR À DISTÂNCIA -->
 
-      <p>
-        A distância pode separar nossos endereços,<br>
-        mas não precisa separar nossos sonhos.
-      </p>
+    <section class="section">
+      <h2 class="section-title">Mesmo longe, sempre conectados 🌎❤️</h2>
 
-      <div class="map">
-        <div class="place">
-          <span>📍❤️</span>
-          <strong>Danny</strong>
-        </div>
+      <div class="map-card">
+        <div class="map-icon" aria-hidden="true">📍💗</div>
 
-        <div class="route"></div>
+        <p>
+          Existem quilômetros entre nós, mas também existe um sentimento
+          que atravessa cada um deles. Preparei algo especial para lembrar
+          que o amor pode encontrar caminhos mesmo quando os braços ainda
+          não conseguem se alcançar.
+        </p>
 
-        <div class="place">
-          <span>❤️📍</span>
-          <strong>Lê</strong>
-        </div>
-      </div>
-
-      <p>
-        Até que nossos caminhos se encontrem,<br>
-        seguimos ligados por algo que vai muito além dos quilômetros.
-      </p>
-
-      <div class="buttons">
         <a
-          class="btn"
+          class="romantic-button"
           href="https://leandrodionisio93l-dot.github.io/o-amor-nao-conhece-distancias/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          ♥ Assistir ao vídeo do nosso mapa
+          Ver nossa surpresa especial ❤️
         </a>
       </div>
     </section>
 
+    <!-- MÚSICA -->
+
+    <section class="section">
+      <h2 class="section-title">Uma música para nós 🎶</h2>
+
+      <p class="section-subtitle">
+        Para ouvir pensando em nós, nos nossos sentimentos
+        e em todos os momentos que ainda vamos viver juntos.
+      </p>
+
+      <div class="music-card">
+        <p>
+          Dê o play e deixe essa música acompanhar um pouquinho
+          do amor que preparei para você. ❤️
+        </p>
+
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/PZWewMnqVHQ"
+          title="Uma música especial para Lê e Danny"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- CARTA ROMÂNTICA COM CORAÇÕES FLUTUANTES -->
+
     <section class="letter-section">
 
+      <!-- Camada decorativa corrigida: os corações ficam atrás do texto. -->
       <div class="floating-hearts" aria-hidden="true">
         <span>♥</span>
         <span>♡</span>
@@ -461,135 +645,110 @@
         <span>💕</span>
       </div>
 
-      <h2>Uma carta para você, meu amor 💗</h2>
+      <!-- O conteúdo fica acima da animação. -->
+      <div class="letter-content">
 
-      <div class="letter">
+        <h2 class="letter-title">Uma carta para você, meu amor 💌</h2>
 
-        <p class="letter-opening">
-          Para minha Danny, com todo o amor do Lê. ❤️
-        </p>
+        <div class="letter-text">
 
-        <p>Meu amor, ❤️</p>
+          <p class="letter-greeting">Meu amor, ❤️</p>
 
-        <p>
-          Às vezes, eu queria que o mundo fosse um pouco menor, só para que
-          a distância entre nós deixasse de existir. Queria poder olhar nos
-          seus olhos enquanto digo tudo aquilo que, às vezes, as palavras
-          não conseguem explicar. Queria transformar cada mensagem em um
-          abraço, cada ligação em um beijo na testa e cada momento de
-          saudade em mais um instante ao seu lado.
-        </p>
+          <p>
+            Às vezes, eu queria que o mundo fosse um pouco menor, só para
+            que a distância entre nós deixasse de existir. Queria poder
+            olhar nos seus olhos enquanto digo tudo aquilo que, às vezes,
+            as palavras não conseguem explicar. Queria transformar cada
+            mensagem em um abraço, cada sentimento de saudade em um beijo
+            na testa, em mais um instante ao seu lado.
+          </p>
 
-        <p>
-          Mas, mesmo com tantos quilômetros entre nós, existe algo que a
-          distância não consegue mudar: o que sinto por você. Você se tornou
-          alguém muito especial na minha vida, alguém que faz parte dos meus
-          pensamentos, dos meus planos e dos sonhos que guardo para o futuro.
-        </p>
+          <p>
+            Mas, mesmo com tantos quilômetros entre nós, existe algo que
+            a distância não consegue mudar: o que sinto por você. Você se
+            tornou alguém muito especial na minha vida, alguém que faz
+            parte dos meus pensamentos, dos meus planos e dos sonhos que
+            guardo para o futuro.
+          </p>
 
-        <p>
-          Amar você, mesmo de longe, é aprender que nem sempre podemos estar
-          perto de quem queremos, mas podemos continuar escolhendo essa
-          pessoa todos os dias. É encontrar felicidade em uma mensagem sua,
-          sorrir ao lembrar de nós e sentir que, mesmo separados por lugares
-          diferentes, existe algo bonito que nos une.
-        </p>
+          <p>
+            Amar você, mesmo de longe, é aprender que nem sempre podemos
+            estar perto de quem queremos, mas podemos continuar escolhendo
+            essa pessoa todos os dias. É encontrar felicidade em uma
+            mensagem sua, sorrir ao lembrar de nós e sentir que, mesmo
+            separados por lugares diferentes, existe algo bonito que nos une.
+          </p>
 
-        <p>
-          Eu não quero que nosso amor seja feito apenas de saudade e espera.
-          Quero que seja feito de confiança, carinho, respeito, companheirismo
-          e de todos aqueles pequenos momentos que, um dia, poderemos viver
-          juntos. Quero conhecer novos lugares com você, rir das coisas mais
-          bobas, compartilhar meus dias e estar presente também quando as
-          coisas não forem tão fáceis.
-        </p>
+          <p>
+            Eu não quero que nosso amor seja feito apenas de saudade e
+            espera. Quero que seja feito de confiança, carinho, respeito,
+            companheirismo e de todos aqueles pequenos momentos que, um dia,
+            poderemos viver juntos. Quero conhecer novos lugares com você,
+            rir das coisas mais bobas, compartilhar meus dias e estar
+            presente também quando as coisas não forem tão fáceis.
+          </p>
 
-        <p>
-          Não posso prometer que todos os dias serão perfeitos, mas quero
-          que você saiba que o que sinto por você é sincero. Quero cuidar do
-          nosso amor com paciência, demonstrar o quanto você é importante
-          para mim e nunca deixar que a distância faça você duvidar do lugar
-          que ocupa no meu coração.
-        </p>
+          <p>
+            Não posso prometer que todos os dias serão perfeitos, mas quero
+            que você saiba que o que sinto por você é sincero. Quero cuidar
+            do nosso amor com paciência, demonstrar o quanto você é
+            importante para mim e nunca deixar que a distância faça você
+            duvidar do lugar que ocupa no meu coração.
+          </p>
 
-        <p>
-          Se hoje precisamos contar os quilômetros que nos separam, espero
-          que um dia possamos olhar para trás e lembrar de tudo o que
-          enfrentamos até finalmente estarmos juntos. E, quando esse dia
-          chegar, quero que cada abraço carregue um pouquinho de toda a
-          saudade que sentimos.
-        </p>
+          <p>
+            Se hoje precisamos contar os quilômetros que nos separam, espero
+            que um dia possamos olhar para trás e lembrar de tudo o que
+            enfrentamos até finalmente estarmos juntos. E, quando esse dia
+            chegar, quero que cada abraço carregue um pouquinho de toda a
+            saudade que sentimos.
+          </p>
 
-        <p>
-          Você não é apenas alguém de quem sinto saudade. Você é alguém com
-          quem quero compartilhar momentos, construir lembranças e imaginar
-          o amanhã. E, enquanto esse amanhã não chega, quero continuar
-          encontrando maneiras de fazer você se sentir amada, mesmo quando
-          meus braços não puderem te alcançar.
-        </p>
+          <p>
+            Você não é apenas alguém de quem sinto saudade. Você é alguém
+            com quem quero compartilhar momentos, construir lembranças e
+            imaginar o amanhã. E, enquanto esse amanhã não chega, quero
+            continuar encontrando maneiras de fazer você se sentir amada,
+            mesmo quando meus braços não puderem te alcançar.
+          </p>
 
-        <p>
-          Eu te amo, meu amor. E, mesmo que hoje exista uma distância entre
-          nós, meu coração continua encontrando o caminho até você. ❤️
-        </p>
+          <p>
+            Eu te amo, meu amor. E, mesmo que hoje exista uma distância
+            entre nós, meu coração continua encontrando o caminho até você. ❤️
+          </p>
 
-      </div>
+          <p class="letter-signature">
+            Com todo o meu amor, para você...<br>
+            de Lê para Danny, minha PRETA !
+          </p>
 
-      <div class="signature">
-        Com todo o meu amor,<br>
-        De Lê para Danny,<br>
-        minha PRETA! ❤️🌹
-      </div>
+        </div>
 
-    </section>
+        <div class="final-message">
+          Até que a distância se transforme em abraço, meu amor continuará
+          encontrando o caminho até você. ❤️
+        </div>
 
-    <section>
-      <h2>Nossa música 🎶</h2>
-
-      <p>
-        Uma música para acompanhar o que meu coração gostaria
-        de dizer quando sinto sua falta.
-      </p>
-
-      <div class="music-note">🎵 💕 🎵</div>
-
-      <iframe
-        class="music-frame"
-        src="https://www.youtube-nocookie.com/embed/PZWewMnqVHQ"
-        title="Nossa música"
-        loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></iframe>
-
-      <div class="buttons">
-        <a
-          class="btn light"
-          href="https://youtu.be/PZWewMnqVHQ?si=ccIQUzqzwkoJD6-a"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          🎵 Ouvir nossa música no YouTube
-        </a>
       </div>
     </section>
 
   </main>
 
-  <footer>
-    <div class="roses">🌹 💕 🌹</div>
+  <!-- RODAPÉ -->
 
-    <p class="final-message">
-      Até que a distância se transforme em abraço,
-      meu amor continuará encontrando o caminho até você.
+  <footer>
+    <p>
+      Feito com carinho, pensando em você, Danny.
     </p>
 
-    <div class="heart">♥</div>
+    <p>
+      <span class="footer-heart" aria-hidden="true">♥</span>
+      De Lê para Danny, minha PRETA.
+      <span class="footer-heart" aria-hidden="true">♥</span>
+    </p>
 
     <p>
-      Você, Danny, hoje e em todos os sonhos que ainda quero viver.<br>
-      Com amor, Lê. ❤️
+      Mesmo longe, você tem um lugar especial no meu coração. ❤️
     </p>
   </footer>
 
