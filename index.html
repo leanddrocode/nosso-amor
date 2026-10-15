@@ -4,76 +4,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nosso Amor ❤️</title>
+  <meta name="theme-color" content="#ffe0eb">
+  <title>Nosso Amor ❤️ | Lê & Danny</title>
 
   <style>
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      background: linear-gradient(135deg, #fff0f5, #ffe0eb, #fff7fa);
       color: #71374d;
       text-align: center;
+      background: linear-gradient(135deg, #fff0f5, #ffe0eb, #fff7fa);
       overflow-x: hidden;
     }
 
     header {
-      padding: 55px 20px 35px;
+      padding: 55px 20px 40px;
     }
 
     h1 {
-      font-size: clamp(2rem, 6vw, 3.5rem);
       color: #c04472;
-      margin-bottom: 12px;
+      font-size: clamp(2.2rem, 7vw, 3.8rem);
+      margin: 12px 0;
+    }
+
+    h2 {
+      color: #c04472;
+      margin-top: 0;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+    }
+
+    p {
+      line-height: 1.8;
     }
 
     .subtitle {
       font-size: 1.1rem;
-      line-height: 1.7;
+      line-height: 1.9;
+    }
+
+    .roses {
+      font-size: 1.8rem;
+      letter-spacing: 7px;
+      margin: 15px 0;
     }
 
     .heart {
       display: inline-block;
       color: #e75480;
-      font-size: 2rem;
+      font-size: 2.3rem;
       animation: heartbeat 1.5s infinite;
     }
 
     section {
       width: min(900px, 92%);
       margin: 25px auto;
-      padding: 28px 22px;
-      background: rgba(255, 255, 255, 0.8);
+      padding: 30px 24px;
+      background: rgba(255, 255, 255, 0.86);
       border: 1px solid #f7c4d6;
       border-radius: 24px;
-      box-shadow: 0 8px 25px rgba(192, 68, 114, 0.1);
-    }
-
-    h2 {
-      color: #c04472;
-      margin-top: 0;
+      box-shadow: 0 8px 25px rgba(192, 68, 114, 0.10);
+      animation: appear 0.8s ease both;
     }
 
     .couple-photo {
       display: block;
       width: 100%;
       max-width: 520px;
-      max-height: 650px;
+      max-height: 680px;
       object-fit: contain;
-      margin: 20px auto;
+      margin: 22px auto;
       border-radius: 20px;
       border: 5px solid #ffe0eb;
-      box-shadow: 0 8px 25px rgba(192, 68, 114, 0.15);
+      box-shadow: 0 8px 25px rgba(192, 68, 114, 0.16);
     }
 
     .letter {
       font-size: 1.08rem;
       line-height: 2;
-      white-space: pre-line;
       text-align: left;
+      overflow-wrap: anywhere;
+    }
+
+    .letter p {
+      margin: 0 0 22px;
+    }
+
+    .letter-opening {
+      color: #b93469;
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 25px !important;
+    }
+
+    .signature {
+      text-align: center;
+      color: #b93469;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 30px;
+      line-height: 1.9;
     }
 
     .buttons {
@@ -81,7 +118,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 12px;
-      margin-top: 22px;
+      margin-top: 24px;
     }
 
     .btn {
@@ -111,9 +148,9 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      margin: 28px auto;
       max-width: 650px;
-      padding: 20px 10px;
+      margin: 28px auto;
+      padding: 24px 12px;
       border-radius: 20px;
       background: linear-gradient(135deg, #fff0f5, #fce0eb);
     }
@@ -142,19 +179,25 @@
       background: #fff0f5;
       padding: 0 8px;
       left: 50%;
-      top: -17px;
+      top: -18px;
       transform: translateX(-50%);
       font-size: 1.5rem;
       animation: heartbeat 1.5s infinite;
     }
 
     .music-frame {
+      display: block;
       width: 100%;
       max-width: 560px;
       aspect-ratio: 16 / 9;
       border: 0;
       border-radius: 16px;
-      margin-top: 12px;
+      margin: 20px auto 0;
+    }
+
+    .music-note {
+      font-size: 2.2rem;
+      margin: 10px;
     }
 
     footer {
@@ -163,139 +206,279 @@
       color: #a13f65;
     }
 
-    .roses {
-      font-size: 1.8rem;
-      letter-spacing: 8px;
-      margin: 10px 0 20px;
+    .final-message {
+      font-size: clamp(1.15rem, 4vw, 1.5rem);
+      color: #b93469;
+      font-style: italic;
+      max-width: 750px;
+      margin: 20px auto;
     }
 
     @keyframes heartbeat {
-      0%, 100% { transform: scale(1); }
-      15% { transform: scale(1.15); }
-      30% { transform: scale(1); }
-      45% { transform: scale(1.12); }
-      60% { transform: scale(1); }
+      0%, 100% { scale: 1; }
+      15% { scale: 1.15; }
+      30% { scale: 1; }
+      45% { scale: 1.12; }
+      60% { scale: 1; }
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        translate: 0 12px;
+      }
+      to {
+        opacity: 1;
+        translate: 0 0;
+      }
     }
 
     @media (max-width: 480px) {
+      header {
+        padding-top: 40px;
+      }
+
       section {
-        padding: 24px 16px;
+        padding: 25px 17px;
       }
 
       .letter {
         font-size: 1rem;
+        line-height: 1.9;
       }
 
       .map {
         gap: 5px;
-        padding: 18px 5px;
+        padding: 20px 5px;
       }
 
       .place {
-        min-width: 72px;
+        min-width: 70px;
         font-size: 0.82rem;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 320px;
+        line-height: 1.5;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
       }
     }
   </style>
 </head>
 
 <body>
+
   <header>
-    <div class="roses">🌹 🌹 🌹</div>
+    <div class="roses">🌹 💗 🌹</div>
+
     <h1>Nosso Amor ❤️</h1>
+
     <p class="subtitle">
-      Mesmo longe, nossos corações continuam pertinho.<br>
-      A distância não muda o que sentimos.
+      Para Danny, meu amor.<br>
+      Mesmo longe, meu coração escolhe você todos os dias.
     </p>
+
     <div class="heart">♥</div>
+
+    <p>De Lê para Danny, minha PRETA! ❤️</p>
   </header>
 
-  <section>
-    <h2>Uma foto, mil lembranças 📸</h2>
-    <p>Um pedacinho de nós que quero guardar para sempre.</p>
+  <main>
+    <section>
+      <h2>Uma foto, mil lembranças 📸</h2>
 
-    <!-- A foto está na raiz do repositório -->
-    <img
-      class="couple-photo"
-      src="foto-do-casal.jpeg"
-      alt="Nossa foto especial"
-    >
-  </section>
+      <p>
+        Entre tantas coisas bonitas da vida,<br>
+        uma das minhas favoritas é ter você na minha história.
+      </p>
 
-  <section>
-    <h2>Dois lugares, um só coração 💌</h2>
-    <p>Os quilômetros podem separar nossos caminhos, mas não o nosso amor.</p>
-
-    <div class="map">
-      <div class="place">
-        <span>📍❤️</span>
-        <strong>Você</strong>
-      </div>
-      <div class="route"></div>
-      <div class="place">
-        <span>❤️📍</span>
-        <strong>Eu</strong>
-      </div>
-    </div>
-
-    <a
-      class="btn video-link"
-      href="https://leandrodionisio93l-dot.github.io/o-amor-nao-conhece-distancias/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      ▶ Assistir ao vídeo do mapa
-    </a>
-  </section>
-
-  <section>
-    <h2>Uma carta para você 💗</h2>
-
-    <div class="letter">Meu amor,
-
-Mesmo com toda essa distância entre nós, você continua presente nos meus pensamentos e no meu coração. Às vezes, eu queria poder encurtar todos esses quilômetros e simplesmente estar ao seu lado, compartilhar os pequenos momentos e transformar a saudade em abraço.
-
-Enquanto isso não acontece, quero que você se lembre de uma coisa: a distância não diminui o que sinto por você. Cada conversa, cada mensagem e cada lembrança nossa tornam tudo isso especial.
-
-Quero continuar construindo nossa história, com carinho, paciência, confiança e muitos planos para o futuro. Que a gente nunca se esqueça de que estamos do mesmo lado, torcendo um pelo outro e cuidando desse amor, mesmo de longe.
-
-Você é muito especial para mim. ❤️</div>
-  </section>
-
-  <section>
-    <h2>Uma música para nós 🎶</h2>
-    <p>Porque algumas músicas dizem o que o coração sente.</p>
-
-    <iframe
-      class="music-frame"
-      src="https://www.youtube-nocookie.com/embed/WzV0OzZrXwQ?rel=0"
-      title="Nossa música"
-      loading="lazy"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-    ></iframe>
-
-    <div class="buttons">
-      <a
-        class="btn light"
-        href="https://youtu.be/WzV0OzZrXwQ?si=QnjzTkfsCPduK9xN"
-        target="_blank"
-        rel="noopener noreferrer"
+      <img
+        class="couple-photo"
+        src="foto-do-casal.jpeg"
+        alt="Foto especial de Lê e Danny"
       >
-        🎵 Abrir música no YouTube
-      </a>
-    </div>
-  </section>
+
+      <p>
+        Que essa seja apenas uma das muitas lembranças lindas
+        que ainda vamos construir juntos. 💕
+      </p>
+    </section>
+
+    <section>
+      <h2>Dois lugares, um só coração 💌</h2>
+
+      <p>
+        A distância pode separar nossos endereços,<br>
+        mas não precisa separar nossos sonhos.
+      </p>
+
+      <div class="map">
+        <div class="place">
+          <span>📍❤️</span>
+          <strong>Danny</strong>
+        </div>
+
+        <div class="route"></div>
+
+        <div class="place">
+          <span>❤️📍</span>
+          <strong>Lê</strong>
+        </div>
+      </div>
+
+      <p>
+        Até que nossos caminhos se encontrem,<br>
+        seguimos ligados por algo que vai muito além dos quilômetros.
+      </p>
+
+      <div class="buttons">
+        <a
+          class="btn"
+          href="https://leandrodionisio93l-dot.github.io/o-amor-nao-conhece-distancias/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ♥ Assistir ao vídeo do nosso mapa
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Uma carta para você, meu amor 💗</h2>
+
+      <div class="letter">
+        <p class="letter-opening">Para minha Danny, com todo o amor do Lê. ❤️</p>
+
+        <p>Meu amor, ❤️</p>
+
+        <p>
+          Às vezes, eu queria que o mundo fosse um pouco menor, só para que
+          a distância entre nós deixasse de existir. Queria poder olhar nos
+          seus olhos enquanto digo tudo aquilo que, às vezes, as palavras
+          não conseguem explicar. Queria transformar cada mensagem em um
+          abraço, cada ligação em um beijo na testa e cada momento de
+          saudade em mais um instante ao seu lado.
+        </p>
+
+        <p>
+          Mas, mesmo com tantos quilômetros entre nós, existe algo que a
+          distância não consegue mudar: o que sinto por você. Você se tornou
+          alguém muito especial na minha vida, alguém que faz parte dos meus
+          pensamentos, dos meus planos e dos sonhos que guardo para o futuro.
+        </p>
+
+        <p>
+          Amar você, mesmo de longe, é aprender que nem sempre podemos estar
+          perto de quem queremos, mas podemos continuar escolhendo essa
+          pessoa todos os dias. É encontrar felicidade em uma mensagem sua,
+          sorrir ao lembrar de nós e sentir que, mesmo separados por lugares
+          diferentes, existe algo bonito que nos une.
+        </p>
+
+        <p>
+          Eu não quero que nosso amor seja feito apenas de saudade e espera.
+          Quero que seja feito de confiança, carinho, respeito, companheirismo
+          e de todos aqueles pequenos momentos que, um dia, poderemos viver
+          juntos. Quero conhecer novos lugares com você, rir das coisas mais
+          bobas, compartilhar meus dias e estar presente também quando as
+          coisas não forem tão fáceis.
+        </p>
+
+        <p>
+          Não posso prometer que todos os dias serão perfeitos, mas quero
+          que você saiba que o que sinto por você é sincero. Quero cuidar do
+          nosso amor com paciência, demonstrar o quanto você é importante
+          para mim e nunca deixar que a distância faça você duvidar do lugar
+          que ocupa no meu coração.
+        </p>
+
+        <p>
+          Se hoje precisamos contar os quilômetros que nos separam, espero
+          que um dia possamos olhar para trás e lembrar de tudo o que
+          enfrentamos até finalmente estarmos juntos. E, quando esse dia
+          chegar, quero que cada abraço carregue um pouquinho de toda a
+          saudade que sentimos.
+        </p>
+
+        <p>
+          Você não é apenas alguém de quem sinto saudade. Você é alguém com
+          quem quero compartilhar momentos, construir lembranças e imaginar
+          o amanhã. E, enquanto esse amanhã não chega, quero continuar
+          encontrando maneiras de fazer você se sentir amada, mesmo quando
+          meus braços não puderem te alcançar.
+        </p>
+
+        <p>
+          Eu te amo, meu amor. E, mesmo que hoje exista uma distância entre
+          nós, meu coração continua encontrando o caminho até você. ❤️
+        </p>
+      </div>
+
+      <div class="signature">
+        Com todo o meu amor,<br>
+        De Lê para Danny,<br>
+        minha PRETA! ❤️🌹
+      </div>
+    </section>
+
+    <section>
+      <h2>Nossa música 🎶</h2>
+
+      <p>
+        Uma música para acompanhar o que meu coração gostaria
+        de dizer quando sinto sua falta.
+      </p>
+
+      <div class="music-note">🎵 💕 🎵</div>
+
+      <iframe
+        class="music-frame"
+        src="https://www.youtube-nocookie.com/embed/PZWewMnqVHQ"
+        title="Nossa música"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+
+      <div class="buttons">
+        <a
+          class="btn light"
+          href="https://youtu.be/PZWewMnqVHQ?si=ccIQUzqzwkoJD6-a"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🎵 Ouvir nossa música no YouTube
+        </a>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="roses">🌹 💕 🌹</div>
-    <p>
-      Até que a distância se transforme em abraço,<br>
+
+    <p class="final-message">
+      Até que a distância se transforme em abraço,
       meu amor continuará encontrando o caminho até você.
     </p>
+
     <div class="heart">♥</div>
-    <p>Feito com amor, para nós dois.</p>
+
+    <p>
+      Você, Danny, hoje e em todos os sonhos que ainda quero viver.<br>
+      Com amor, Lê. ❤️
+    </p>
   </footer>
+
 </body>
 </html>
