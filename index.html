@@ -1,32 +1,301 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f8dce7">
-<meta name="description" content="Uma mensagem do coração para alguém muito especial.">
-<title>Para você ❤️</title>
-<style>
-:root{--pink:#f9e4ec;--rose:#c15a7d;--deep:#78354f;--cream:#fffaf8;--line:#efc5d4}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--deep);font-family:Georgia,'Times New Roman',serif;line-height:1.7;background:linear-gradient(180deg,#fffafc,#fbe8ef 52%,#fffaf8)}a{color:inherit}.hero{min-height:88svh;display:grid;place-items:center;text-align:center;padding:38px 20px;position:relative;overflow:hidden;background:radial-gradient(ellipse at top,#fff 0,#fbe7ee 68%,#f6d6e2 100%)}.hero:before,.hero:after{content:'🌹';position:absolute;top:7%;font-size:clamp(38px,8vw,76px);opacity:.22}.hero:before{left:5%;transform:rotate(-20deg)}.hero:after{right:5%;transform:rotate(20deg)}.hero-inner{max-width:760px;position:relative;z-index:1}.eyebrow{font:11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#a75a77}.hero h1{font-size:clamp(2.7rem,8vw,5.3rem);font-weight:normal;line-height:1.08;color:#ad456b;margin:18px 0}.hero p{font-size:clamp(1.05rem,3vw,1.3rem);max-width:620px;margin:0 auto 26px}.btn{display:inline-block;padding:12px 22px;border-radius:999px;text-decoration:none;background:var(--rose);color:#fff;box-shadow:0 8px 24px #a83f6825;border:1px solid transparent;transition:transform .2s}.btn:hover{transform:translateY(-2px)}.btn.light{background:#fff;color:var(--rose);border-color:var(--line)}section{padding:60px 18px}.wrap{max-width:850px;margin:auto}.title{text-align:center;font-size:clamp(2rem,5vw,3rem);font-weight:normal;line-height:1.2;color:#ad456b;margin:0 0 10px}.sub{text-align:center;max-width:650px;margin:0 auto 28px;color:#87566b}.photo{max-width:560px;margin:26px auto 0;padding:10px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 16px 45px #8d3b5b15}.photo img{width:100%;height:auto;max-height:650px;object-fit:contain;display:block;border-radius:10px;background:#fff7fa}.caption{text-align:center;padding:12px 8px 4px;font-style:italic}.paper{background:#fffdfc;border:1px solid #efd3de;border-radius:18px;padding:clamp(22px,5vw,48px);box-shadow:0 14px 40px #8d3b5b12}.paper p{margin:0 0 17px}.sign{text-align:center;color:#ad456b;font-size:1.08rem;margin-top:26px!important}.distance{background:linear-gradient(135deg,#f8dce7,#fff7fa)}.map-card,.music-card{max-width:760px;margin:auto;background:#fffdfd;border:1px solid var(--line);border-radius:22px;padding:clamp(14px,3vw,24px);box-shadow:0 12px 35px #9b3d6010}.map-art{height:230px;position:relative;overflow:hidden;border-radius:15px;background-color:#fff3f7;background-image:linear-gradient(25deg,transparent 47%,#f2d7e1 48%,#f2d7e1 50%,transparent 51%),linear-gradient(105deg,transparent 45%,#f6dfe7 46%,#f6dfe7 48%,transparent 49%),linear-gradient(160deg,transparent 60%,#f1d5e0 61%,#f1d5e0 63%,transparent 64%)}.route{position:absolute;left:18%;right:18%;top:49%;border-top:3px dashed #cc7f9d;transform:rotate(-9deg)}.heart{position:absolute;top:33%;font-size:clamp(32px,6vw,44px);filter:drop-shadow(0 3px 4px #b94f7640);animation:pulse 2s infinite}.heart.one{left:12%}.heart.two{right:12%;animation-delay:1s}.map-label{position:absolute;top:59%;font:clamp(9px,2vw,12px) Arial,sans-serif;color:#95516d}.map-label.one{left:5%}.map-label.two{right:5%}.center{text-align:center}.map-copy{max-width:600px;margin:18px auto}.video-link{display:inline-block;margin-top:5px}.music-card p{text-align:center}.video-frame{position:relative;aspect-ratio:16/9;width:100%;overflow:hidden;border-radius:14px;background:#f7dce6}.video-frame iframe{width:100%;height:100%;border:0}.end{text-align:center;padding:66px 20px 74px;background:#ad456b;color:white}.end h2{font-size:clamp(2rem,6vw,3.4rem);font-weight:normal;line-height:1.2;margin:12px auto}.end p{max-width:650px;margin:18px auto}.tiny{font:12px Arial,sans-serif;opacity:.8;margin-top:24px}.float{position:fixed;bottom:-30px;left:var(--x);font-size:18px;opacity:0;pointer-events:none;animation:rise var(--duration) linear var(--delay) infinite;z-index:5}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.13)}}@keyframes rise{0%{transform:translateY(0) rotate(0);opacity:0}12%{opacity:.35}85%{opacity:.25}100%{transform:translateY(-110vh) rotate(25deg);opacity:0}}@media(max-width:480px){section{padding:48px 15px}.hero{min-height:82svh}.map-art{height:200px}.map-card{padding:12px}.hero:before{left:2%}.hero:after{right:2%}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosso Amor ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: linear-gradient(135deg, #fff0f5, #ffe0eb, #fff7fa);
+      color: #71374d;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 55px 20px 35px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      color: #c04472;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .heart {
+      display: inline-block;
+      color: #e75480;
+      font-size: 2rem;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    section {
+      width: min(900px, 92%);
+      margin: 25px auto;
+      padding: 28px 22px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid #f7c4d6;
+      border-radius: 24px;
+      box-shadow: 0 8px 25px rgba(192, 68, 114, 0.1);
+    }
+
+    h2 {
+      color: #c04472;
+      margin-top: 0;
+    }
+
+    .couple-photo {
+      display: block;
+      width: 100%;
+      max-width: 520px;
+      max-height: 650px;
+      object-fit: contain;
+      margin: 20px auto;
+      border-radius: 20px;
+      border: 5px solid #ffe0eb;
+      box-shadow: 0 8px 25px rgba(192, 68, 114, 0.15);
+    }
+
+    .letter {
+      font-size: 1.08rem;
+      line-height: 2;
+      white-space: pre-line;
+      text-align: left;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 30px;
+      background: #d94f83;
+      color: white;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      transition: transform 0.25s, background 0.25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: #b93469;
+    }
+
+    .btn.light {
+      background: #f8d1df;
+      color: #843550;
+    }
+
+    .map {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 28px auto;
+      max-width: 650px;
+      padding: 20px 10px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #fff0f5, #fce0eb);
+    }
+
+    .place {
+      min-width: 85px;
+      font-size: 0.95rem;
+    }
+
+    .place span {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .route {
+      flex: 1;
+      border-top: 3px dashed #d94f83;
+      position: relative;
+    }
+
+    .route::after {
+      content: "♥";
+      position: absolute;
+      color: #d94f83;
+      background: #fff0f5;
+      padding: 0 8px;
+      left: 50%;
+      top: -17px;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    .music-frame {
+      width: 100%;
+      max-width: 560px;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      border-radius: 16px;
+      margin-top: 12px;
+    }
+
+    footer {
+      padding: 35px 20px 45px;
+      line-height: 1.9;
+      color: #a13f65;
+    }
+
+    .roses {
+      font-size: 1.8rem;
+      letter-spacing: 8px;
+      margin: 10px 0 20px;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.15); }
+      30% { transform: scale(1); }
+      45% { transform: scale(1.12); }
+      60% { transform: scale(1); }
+    }
+
+    @media (max-width: 480px) {
+      section {
+        padding: 24px 16px;
+      }
+
+      .letter {
+        font-size: 1rem;
+      }
+
+      .map {
+        gap: 5px;
+        padding: 18px 5px;
+      }
+
+      .place {
+        min-width: 72px;
+        font-size: 0.82rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="float" style="--x:12%;--duration:15s;--delay:0s">♡</div><div class="float" style="--x:38%;--duration:19s;--delay:4s">♥</div><div class="float" style="--x:72%;--duration:17s;--delay:2s">♡</div><div class="float" style="--x:91%;--duration:21s;--delay:7s">♥</div>
-<header class="hero"><div class="hero-inner"><div class="eyebrow">uma mensagem do coração</div><h1>Para você ❤️</h1><p>Em meio à imensidão do universo, existem pessoas que fazem o nosso pequeno mundo ficar muito mais bonito. Você é uma delas.</p><a class="btn" href="#nossa-historia">Abra essa surpresa 💌</a></div></header>
-<section id="nossa-historia"><div class="wrap"><h2 class="title">Um pedacinho da nossa história</h2><p class="sub">Mesmo com a distância entre nós, existe uma lembrança que me faz sentir você um pouquinho mais perto.</p><div class="photo"><img src="assets/foto-do-casal.jpeg" alt="Foto especial do casal"><div class="caption">“Se eu pudesse escolher um lugar no universo para compartilhar os meus melhores momentos, escolheria estar ao seu lado.”</div></div></div></section>
-<section id="carta"><div class="wrap"><h2 class="title">O que meu coração gostaria que você soubesse</h2><p class="sub">Leia devagar. Cada palavra foi escolhida com carinho.</p><article class="paper">
-<p>Meu amor, se um dia você quiser entender o tamanho do que sinto por você, não tente medir pelas palavras que digo. Algumas coisas que moram dentro de mim são grandes demais para caber em frases — e o meu amor por você é uma delas.</p>
-<p>A distância às vezes me lembra de tudo aquilo que eu queria poder fazer agora: segurar sua mão, olhar nos seus olhos sem uma tela entre nós, abraçar você por tempo suficiente para o mundo inteiro ficar em silêncio. Sinto falta até dos momentos que ainda não vivemos, porque já imagino como seria bonito compartilhá-los com você.</p>
-<p>Mas a distância também me ensina algo: estar longe não diminui o que é verdadeiro. Meu carinho chega em pensamentos inesperados, em músicas que me fazem lembrar de você, em planos que faço sorrindo e na vontade de contar a você até as coisas mais simples do meu dia.</p>
-<p>Eu não quero ser apenas alguém que diz que ama você. Quero demonstrar isso com cuidado, respeito, sinceridade e presença — inclusive quando a presença precisar ser uma mensagem, uma ligação ou algumas palavras que tentem virar abraço.</p>
-<p>Quero conhecer seus sonhos, ouvir suas histórias, celebrar suas conquistas e acolher você nos dias em que as coisas não saírem como esperava. Você não precisa ser perfeita para ser amada por mim. Quero que possa ser inteira: feliz, cansada, animada, insegura, sonhadora, simplesmente você.</p>
-<p>Não posso prometer que todos os dias serão fáceis, mas posso escolher cuidar do que construímos. Quero que a gente aprenda a conversar, a compreender um ao outro e a proteger esse amor sem esquecer que cada um de nós também tem seus próprios sonhos e seu próprio caminho.</p>
-<p>Quando penso no futuro, não imagino apenas grandes momentos. Imagino coisas simples que ganham outro significado quando compartilhadas com você: uma conversa sem pressa, uma risada boba, um abraço depois de um dia difícil, a tranquilidade de estar perto sem precisar dizer nada.</p>
-<p>Até que esse abraço deixe de ser um desejo e se torne realidade, quero continuar encontrando maneiras de fazer você se sentir querida. Quero que, mesmo nos dias de saudade, você se lembre de que existe alguém que pensa em você com carinho e que valoriza a pessoa maravilhosa que você é.</p>
-<p>Se eu pudesse escolher uma coisa para guardar em todos os capítulos da minha vida, escolheria a oportunidade de continuar conhecendo você. Não porque eu saiba como tudo vai acontecer, mas porque quero descobrir, com verdade e carinho, o que ainda podemos construir.</p>
-<p class="sign">Você está longe dos meus braços, mas muito presente no meu coração. ❤️</p>
-</article></div></section>
-<section class="distance" id="distancia"><div class="wrap"><h2 class="title">Dois lugares no mapa. Dois corações. ❤️</h2><p class="sub">Um amor que atravessa a distância.</p><div class="map-card"><div class="map-art" role="img" aria-label="Dois corações em lugares distantes ligados por uma rota pontilhada"><div class="route"></div><div class="heart one">💗</div><div class="heart two">💗</div><div class="map-label one">onde a saudade mora</div><div class="map-label two">onde o abraço espera</div></div><p class="map-copy center">“Talvez exista distância entre os nossos endereços, mas o carinho encontra caminhos que nenhum mapa consegue desenhar.”</p><p class="center">O vídeo que representa esse sentimento está aqui:</p><div class="center"><a class="btn light video-link" href="https://www.instagram.com/p/DdC8RylhjFZ/?cplk=MTlmNmV2Z3B1aG9lcg==" target="_blank" rel="noopener noreferrer">▶ Assistir ao vídeo do mapa</a></div><p class="sub" style="margin:14px auto 0;font-size:.92rem">Por enquanto, esse botão abre o vídeo original. Para reproduzi-lo diretamente nesta página, será necessário ter o arquivo do vídeo.</p></div></div></section>
-<section id="musica"><div class="wrap"><h2 class="title">Uma música para acompanhar nosso amor 🎶</h2><p class="sub">Dê o play e deixe essa canção fazer parte desse pedacinho da nossa história.</p><div class="music-card"><div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/WzV0OzZrXwQ?rel=0" title="Música escolhida para esta surpresa" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p>Se o player não carregar, <a href="https://youtu.be/WzV0OzZrXwQ" target="_blank" rel="noopener noreferrer">abra a música no YouTube</a>.</p></div></div></section>
-<footer class="end"><div style="font-size:2rem">♡</div><h2>Meu coração sempre encontra o caminho até você.</h2><p>Mesmo que hoje exista um mapa entre nós, quero continuar construindo com você uma história bonita, com carinho, respeito, sinceridade e muitos abraços esperando pela hora certa.</p><p><strong>Até que a distância se transforme em abraço, meu amor continuará encontrando o caminho até você.</strong></p><div style="font-size:1.8rem">🌹 ❤️ 🌹</div><div class="tiny">Feito com carinho, pensando em você.</div></footer>
-</body></html>
+  <header>
+    <div class="roses">🌹 🌹 🌹</div>
+    <h1>Nosso Amor ❤️</h1>
+    <p class="subtitle">
+      Mesmo longe, nossos corações continuam pertinho.<br>
+      A distância não muda o que sentimos.
+    </p>
+    <div class="heart">♥</div>
+  </header>
+
+  <section>
+    <h2>Uma foto, mil lembranças 📸</h2>
+    <p>Um pedacinho de nós que quero guardar para sempre.</p>
+
+    <!-- A foto está na raiz do repositório -->
+    <img
+      class="couple-photo"
+      src="foto-do-casal.jpeg"
+      alt="Nossa foto especial"
+    >
+  </section>
+
+  <section>
+    <h2>Dois lugares, um só coração 💌</h2>
+    <p>Os quilômetros podem separar nossos caminhos, mas não o nosso amor.</p>
+
+    <div class="map">
+      <div class="place">
+        <span>📍❤️</span>
+        <strong>Você</strong>
+      </div>
+      <div class="route"></div>
+      <div class="place">
+        <span>❤️📍</span>
+        <strong>Eu</strong>
+      </div>
+    </div>
+
+    <a
+      class="btn video-link"
+      href="https://leandrodionisio93l-dot.github.io/o-amor-nao-conhece-distancias/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      ▶ Assistir ao vídeo do mapa
+    </a>
+  </section>
+
+  <section>
+    <h2>Uma carta para você 💗</h2>
+
+    <div class="letter">Meu amor,
+
+Mesmo com toda essa distância entre nós, você continua presente nos meus pensamentos e no meu coração. Às vezes, eu queria poder encurtar todos esses quilômetros e simplesmente estar ao seu lado, compartilhar os pequenos momentos e transformar a saudade em abraço.
+
+Enquanto isso não acontece, quero que você se lembre de uma coisa: a distância não diminui o que sinto por você. Cada conversa, cada mensagem e cada lembrança nossa tornam tudo isso especial.
+
+Quero continuar construindo nossa história, com carinho, paciência, confiança e muitos planos para o futuro. Que a gente nunca se esqueça de que estamos do mesmo lado, torcendo um pelo outro e cuidando desse amor, mesmo de longe.
+
+Você é muito especial para mim. ❤️</div>
+  </section>
+
+  <section>
+    <h2>Uma música para nós 🎶</h2>
+    <p>Porque algumas músicas dizem o que o coração sente.</p>
+
+    <iframe
+      class="music-frame"
+      src="https://www.youtube-nocookie.com/embed/WzV0OzZrXwQ?rel=0"
+      title="Nossa música"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+
+    <div class="buttons">
+      <a
+        class="btn light"
+        href="https://youtu.be/WzV0OzZrXwQ?si=QnjzTkfsCPduK9xN"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        🎵 Abrir música no YouTube
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="roses">🌹 💕 🌹</div>
+    <p>
+      Até que a distância se transforme em abraço,<br>
+      meu amor continuará encontrando o caminho até você.
+    </p>
+    <div class="heart">♥</div>
+    <p>Feito com amor, para nós dois.</p>
+  </footer>
+</body>
+</html>
